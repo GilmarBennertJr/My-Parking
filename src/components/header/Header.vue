@@ -1,20 +1,23 @@
 <template>
-    <div class="container mt-3">
-        <div class="text-center">
-            <img src="../../assets/logo.png" class="width300px">
-        </div>
+    <div class="text-center">
+        <img src="../../assets/logo.png" alt="">
+
         <hr>
-        <h4 v-text="title"></h4>
+
+        <h1 v-text="title"></h1>
+        
         <hr>
     </div>
 </template>
-<script>
-    export default {
-        props: ['title']
-    }
+
+<script>    
+export default {
+    props: ['title']
+}
 </script>
+
 <style>
-    .width300px {
+    img {
         width: 300px;
     }
 </style>
