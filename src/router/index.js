@@ -1,23 +1,21 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
-
-import Home from './../views/Home.vue';
-import Template from './../views/dashboard/Template.vue';
-import ListarReservas from './../views/dashboard/ListarReservas.vue';
-import NovaReserva from './../views/dashboard/NovaReserva.vue';
-
-const reserva = [
-    { path: 'nova', component: NovaReserva },
-    { path: 'lista', component: ListarReservas }
-];
-
-const routes = [
-    { path: '/', component: Home },
-    { path: '/reserva', component: Template, children: reserva, redirect: '/reserva/lista' }
-];
+import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '../views/HomeView.vue'
+import Login from '../views/auth/Login.vue'
 
 const router = createRouter({
-    routes,
-    history: createWebHashHistory()
-});
+  history: createWebHistory(),
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: HomeView
+    },
+    {
+      path: '/auth',
+      name: 'auth',
+      component: Login
+    }
+  ]
+})
 
-export default router;
+export default router
